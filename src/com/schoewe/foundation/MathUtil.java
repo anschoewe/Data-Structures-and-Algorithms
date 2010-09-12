@@ -1,8 +1,8 @@
-package com.schoewe.math;
+package com.schoewe.foundation;
 
 import java.util.Arrays;
 
-public class Primes 
+public class MathUtil 
 {
 	public static boolean isPrime(int n)
 	{

@@ -1,13 +1,12 @@
-package com.schoewe.test.math;
+package com.schoewe.test.foundation;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-import com.schoewe.math.Primes;
+import com.schoewe.foundation.MathUtil;
 
 
 public class MathTests
@@ -16,23 +15,23 @@ public class MathTests
 	public void testIsPrime()
 	{
 		int n = 2;
-		assertTrue(Primes.isPrime(n));
+		assertTrue(MathUtil.isPrime(n));
 		
 		n = 3;
-		assertTrue(Primes.isPrime(n));
+		assertTrue(MathUtil.isPrime(n));
 		
 		n = 19;
-		assertTrue(Primes.isPrime(n));
+		assertTrue(MathUtil.isPrime(n));
 		
 		n = 20;
-		assertFalse(Primes.isPrime(n));
+		assertFalse(MathUtil.isPrime(n));
 	}
 	
 	@Test
 	public void testPrimes()
 	{
 		int n = 2;
-		boolean[] isPrimeArray = Primes.getPrimes(n);
+		boolean[] isPrimeArray = MathUtil.getPrimes(n);
 		List<Integer> primes = new LinkedList<Integer>();
 		for(int i = 0; i < isPrimeArray.length; i++)
 			if(isPrimeArray[i]) primes.add(i);
@@ -40,7 +39,7 @@ public class MathTests
 		assertArrayEquals(new Integer[] {2}, primes.toArray(new Integer[0]));
 		
 		n = 20;
-		isPrimeArray = Primes.getPrimes(n);
+		isPrimeArray = MathUtil.getPrimes(n);
 		primes = new LinkedList<Integer>();
 		for(int i = 0; i < isPrimeArray.length; i++)
 			if(isPrimeArray[i]) primes.add(i);		
