@@ -20,4 +20,5 @@ public class SortTests
 		SortUtil.quickSort(a, 0, a.length - 1);
 		assertArrayEquals(new Integer[] {3, 3, 4, 5, 6, 7}, a);
 	}
+
 }
