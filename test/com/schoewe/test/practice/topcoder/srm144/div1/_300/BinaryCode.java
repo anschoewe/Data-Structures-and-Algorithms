@@ -1,4 +1,4 @@
-package com.schoewe.test.practice.topcoder.srm144.div1;
+package com.schoewe.test.practice.topcoder.srm144.div1._300;
 
 import org.junit.Test;
 import static org.junit.Assert.*;
