@@ -2,6 +2,51 @@ package com.schoewe.foundation;
 
 public class SortUtil
 {
+	public static void mergeSort(Integer[] a, int left, int right)
+	{
+		if(left < right)
+		{
+			int divideIndex = (left + right) / 2;
+			mergeSort(a, left, divideIndex);
+			mergeSort(a, divideIndex + 1, right);
+			merge(a, left, divideIndex, right);
+		}
+	}
+	
+	private static void merge(Integer[] a, int left, int divideIndex, int right)
+	{
+		int leftCount = divideIndex - left + 1;
+		int rightCount = right - divideIndex;
+		Integer[] aLeft = new Integer[leftCount + 1];
+		Integer[] aRight = new Integer[rightCount + 1];
+		
+		//temporarily copy sub array into memory
+		int i = 0;
+		int j = 0;
+		for(; i < leftCount; i++)
+			aLeft[i] = a[left + i];
+		for(; j < rightCount; j++)
+			aRight[j] = a[divideIndex + j + 1];
+		
+		//add a last number that avoid edge case checking when comparing array values
+		aLeft[aLeft.length - 1] = Integer.MAX_VALUE;
+		aRight[aRight.length - 1] = Integer.MAX_VALUE;
+		
+		//go through the temp arrays and always put the next largest value into the original array
+		i = 0;
+		j = 0;
+		//k represents the index where the next largest value will be placed in our original array (must include the right-most index of our subarray)
+		for(int k = left; k <= right; k++)
+		{
+			if(aLeft[i] <= aRight[j])
+				a[k] = aLeft[i++];
+			else
+				a[k] = aRight[j++];
+		}
+	}
+
+
+
 	public static void quickSort(Integer[] a, int left, int right)
 	{
 		if(left < right)
@@ -94,7 +139,7 @@ public class SortUtil
 		a[indexJ] = tempValue;
 	}
 	
-	private static <T> void printArray(String message, T[] a)
+	public static <T> void printArray(String message, T[] a)
 	{
 		StringBuffer sb = new StringBuffer();
 		sb.append(message); sb.append("... ");
