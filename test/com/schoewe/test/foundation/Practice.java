@@ -1,5 +1,7 @@
 package com.schoewe.test.foundation;
 
+import com.schoewe.foundation.Util;
+
 public class Practice
 {
 	
@@ -58,25 +60,16 @@ public class Practice
 		int pivotIndex = (left + right) / 2;
 		int pivotValue = a[pivotIndex];
 		int insertIndex = left;
-		swap(a, pivotIndex, right);
+		Util.swap(a, pivotIndex, right);
 		
 		for(int i = left; i < right; i++)
 		{
 			if(a[i] <= pivotValue)
-				swap(a, i, insertIndex++);
+				Util.swap(a, i, insertIndex++);
 		}
-		swap(a, insertIndex, right);
+		Util.swap(a, insertIndex, right);
 		
 		return insertIndex;
-	}
-
-
-	@SuppressWarnings("unused")
-	private static void swap(Integer[] a, int indexI, int indexJ)
-	{
-		int temp = a[indexI];
-		a[indexI] = a[indexJ];
-		a[indexJ] = temp;
 	}
 	
 }

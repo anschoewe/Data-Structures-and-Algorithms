@@ -8,7 +8,19 @@ import static org.junit.Assert.*;
 
 public class SortTests
 {
-
+	@Test
+	public void testBubbleSort()
+	{
+		Integer[] a = new Integer[] {5, 3, 7, 4, 6};
+		SortUtil.bubbleSort(a);	
+		assertArrayEquals(new Integer[] {3, 4, 5, 6, 7}, a);
+		
+		a = new Integer[] {5, 3, 7, 4, 6, 3};
+		SortUtil.bubbleSort(a);	
+		assertArrayEquals(new Integer[] {3, 3, 4, 5, 6, 7}, a);
+	}
+	
+	
 	@Test
 	public void testQuickSort()
 	{
