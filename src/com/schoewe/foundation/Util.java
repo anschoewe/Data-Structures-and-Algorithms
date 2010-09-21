@@ -1,5 +1,7 @@
 package com.schoewe.foundation;
 
+import java.util.List;
+
 import com.schoewe.foundation.datastructure.SingleLinkNode;
 
 public class Util
@@ -28,6 +30,18 @@ public class Util
 		{
 			swap(a, i, j--);
 		}
+	}
+
+	public static <T> void swap(List<T> a, int indexI, int indexJ)
+	{
+		T tempValue = a.get(indexI);
+		a.set(indexI, a.get(indexJ));
+		a.set(indexJ, tempValue);
+	}
+	
+	protected List test()
+	{
+		return null;
 	}
 	
 	public static void swap(Integer[] a, int indexI, int indexJ)

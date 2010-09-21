@@ -12,6 +12,14 @@ import com.schoewe.foundation.MathUtil;
 public class MathTests
 {
 	@Test
+	public void testHash()
+	{
+		int h = 2;
+		h = h << 1;
+		assertEquals(4, h);
+	}
+	
+	@Test
 	public void testIsPrime()
 	{
 		int n = 2;
