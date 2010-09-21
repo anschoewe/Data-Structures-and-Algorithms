@@ -72,7 +72,7 @@ public class SortTests
 		assertArrayEquals(new Integer[] {3, 3, 4, 5, 6, 7}, a);
 	}
 	
-	/*
+	
 	@Test
 	public void testQuickSortPractice()
 	{
@@ -97,6 +97,5 @@ public class SortTests
 		Practice.mergeSort(a, 0, a.length - 1);
 		assertArrayEquals(new Integer[] {3, 3, 4, 5, 6, 7}, a);
 	}
-	*/
 
 }

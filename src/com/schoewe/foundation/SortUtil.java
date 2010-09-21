@@ -2,7 +2,6 @@ package com.schoewe.foundation;
 
 public class SortUtil
 {
-	
 	public static void bubbleSort(Integer[] a)
 	{
 		for(int i = a.length - 1; i > 0; i--)
